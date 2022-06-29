@@ -2,8 +2,8 @@ import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { within, userEvent } from '@storybook/testing-library';
 import { CommonModule } from '@angular/common';
 
-import Button from './button.component';
-import Header from './header.component';
+// import Button from './button.component';
+// import Header from './header.component';
 import Page from './page.component';
 
 export default {
@@ -15,7 +15,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      declarations: [Button, Header],
+      declarations: [],
       imports: [CommonModule],
     }),
   ],
@@ -31,6 +31,15 @@ export const LoggedOut = Template.bind({});
 export const LoggedIn = Template.bind({});
 LoggedIn.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const loginButton = await canvas.getByRole('button', { name: /Log in/i });
-  await userEvent.click(loginButton);
+  // const loginButton = await canvas.getByRole('button', { name: /Log in/i });
+  // await userEvent.click(loginButton);
 };
+
+export const myStory:any = /* … */'';
+
+myStory.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/D6rC4uJFxCOETXulEAWMLm/Portal-V2?node-id=371%3A37954" // <-- paste here!
+  }
+}
